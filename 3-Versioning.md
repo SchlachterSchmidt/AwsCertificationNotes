@@ -1,4 +1,4 @@
-# Versioning
+# Versioning
 
 - link to documentation: [https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectVersioning.html](Versioning)
 - create bucket
@@ -14,7 +14,7 @@
   - the previous permissions are remembered (publicly accessible)
 - it is possible to set up 2FA for deleting objects
 
-# Exam tips
+# Exam tips
 - Versioning stores all versions of an object
 - good backup tool
 - once enabled, it cannot be disabled, only suspended
