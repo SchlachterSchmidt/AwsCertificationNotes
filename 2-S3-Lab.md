@@ -1,4 +1,4 @@
-# Create S3 bucket
+# Create S3 bucket
 
 - S3 is global (unlike most other AWS services)
 - bucket name must be DNS compliant
@@ -11,12 +11,12 @@
 - upload object and set access permissions,  storage tier, encryption options
 
 
-# Making objects public
+# Making objects public
 - objects are reachable by a URL in theory but have to be made public
 1. make the bucket publicly accessible in 'Edit public access settings' (uncheck 4 boxes and confirm). Now, objects in the bucket can be made public
 2. update the object to make it publicly accessible in Actions -> make public
 
-# Exam tips
+# Exam tips
 - bucket names must be unique globally
 - success indicated by 200 OK
 - 3 types of storage
