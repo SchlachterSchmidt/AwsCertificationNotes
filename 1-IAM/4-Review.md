@@ -1,4 +1,4 @@
-# Review and Summary
+# Review and Summary
 
 - IAM consists of
   - Users
