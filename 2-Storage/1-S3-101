@@ -1,0 +1,77 @@
+# S3 basics
+- Place to store data
+- Object storage where you can upload files up to 5TB in size
+- pay by the GB, storage is unlimited
+- storage organized around bucket
+  - bucket have a unique name globally
+  - bucket name forms the URL
+  - url look like
+    https://s3-eu-west-1.amazonaws.com/bucketname
+- build for 99.9 availability, SLA is 99.9
+- Amazon guarantee 11 9's for durability (data loss)
+- tiered storage available
+- lifecycle management
+- versioning
+- Encryption
+- secure data using Access Conrol Lists and Bucket Policies
+
+
+# Data consistency model
+- read after write for PUT on create
+- eventual consistency for PUT on update and DELETE
+  - S3 is spread across AZs so it can take time to propagate across AZs
+
+
+# S3 is a K-V store
+- key is the name of the object
+- value is the data that is stored
+- version ID
+- Metadata
+- subresources
+  - access control list
+  - Torrent
+
+
+# S3 storage tiers
+- S3 Standard
+  - 4 9's availability, 11 9's durability
+  - stored redundantly across multiple facilities
+  - designed to survive the loss of 2 facilities at the same time
+- S3 - IA
+  - Infrequently Accessed
+  - stored redundantly
+  - lower cost, but charged a retrieval fee
+- S3 One Zone - IA
+  - not stored redundantly
+  - even cheaper, but retrieval fee
+- Glacier
+  - used for archiving only
+  - very cheap, but retrieval fee
+  - 3 Flavours: Expedited, Standard, Bulk
+  - Standard retrieval takes 3 - 5 hours
+
+
+# S3 charges
+- storage per GB
+- per request
+- storage management pricing like tagging
+- transfer across regions
+- transfer accelleration
+  - enables fast, easy, secure transfer of files from S3 to the end user
+  - uses edge locations
+
+
+# Tips
+- object based, not DB
+- up to 5 TB in size
+- stored in buckets
+- S3 is a universal namespace
+- URL: https://s3-<region>.amazonaws.com/<bucketname>
+- read after write for create using PUT
+- eventual consistency for updates
+- Standard, IA, One Zone - IA, Glacier
+- Key - Value stored
+- version, metadata and subresources
+  - ACL
+  - Torrent
+- Read S3 FAQ -> it comes up a lot on the exams
