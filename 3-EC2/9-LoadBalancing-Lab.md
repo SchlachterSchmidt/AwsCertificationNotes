@@ -36,3 +36,9 @@
 - 504 means LB is online, but cannot reach instances
   - trouble shoot web server to resolve
 - client IP address is forwarded in the X-forwarded-For header
+- Instances monitored are
+  - InService
+  - OutOfService
+- Health check poll the instance on a specific endpoint
+- LB's have DNS name, you are never given an IP address
+- 
