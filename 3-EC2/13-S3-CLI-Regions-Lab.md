@@ -1,0 +1,22 @@
+# S3 CLI and Regions
+- launch EC2 instance
+- create 2 S3 Buckets in 3 different regions
+- add some objects to each Buckets
+- create a new S3 admin full access role in IAM (do not assign yet)
+
+- ssh into the EC2 instance
+- try `aws s3 ls` -> thiss will fail as the EC2 instance does not have the right role, and we have not run `aws configure` yet
+- assign this role to the EC2 instance
+  - instance Actions
+  - instance settings
+  - Attach / Replace IAM role
+  - select the  new tole and apply
+- try again to run `aws s3 ls` and it will work almost immediately
+- download content of first (in your default region) bucket with `aws s3 cp --recursive s3://<BUCKETNAME> /home/ec2-user`
+- try the same with a bucket in another region
+  - note the failure -> the command only works if we are copying from a bucket in our default location (as set in /.aws/config)
+  - to fix, either
+    - supply the --region argument
+    - set `AWS_DEFAULT_REGION` environment var
+    - set the region in `/.aws/config`
+  - run `aws s3api get-bucket-location --bucket <BUCKETNAME>`
