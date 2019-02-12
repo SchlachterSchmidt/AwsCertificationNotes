@@ -1,0 +1,20 @@
+# Building a Serverless Website
+- create new Lambda function with Python3.6 runtime env
+- assign basic microservice role
+- paste as function body the code that is supposed to run
+- add API gateway trigger
+- navigate to API gateway section
+- delete method ANY
+- create new method:
+  - GET
+  - proxy to lambda
+  - select lambda function
+  - save
+  - deploy to production
+- click on Stages, select the Gateway method just created and test the invoke URL
+- create an S3 bucket and upload an index and error file
+- make both bucket and objects public
+- enable static website hosting
+- click the index link
+- click the button to view lambda in action
+- configure route 53 to redirect
